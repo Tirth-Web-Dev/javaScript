@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.cosmic-aurora {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0a;
+  overflow: hidden;
+}
+
+.cosmic-aurora::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(
+      ellipse at 20% 30%,
+      rgba(56, 189, 248, 0.4) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 70%,
+      rgba(139, 92, 246, 0.3) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at 60% 20%,
+      rgba(236, 72, 153, 0.25) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 40% 80%,
+      rgba(34, 197, 94, 0.2) 0%,
+      transparent 65%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  z-index: 1; /* Keeps your content above the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.todo {
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 50px;
+  border-radius: 30px;
+    transition: all 0.5s ease-in-out;
+
+}
+.todo h1 {
+  color: #d8f3ff;
+}
+.addtask {
+  background-color: rgba(250, 235, 215, 0.052);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0px 0px 0px 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#inputbox {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  font-size: 15px;
+}
+#inputbox::placeholder {
+  color: #c7d1e1;
+}
+.addbtn {
+  padding: 5px 20px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(190deg, #4f97e9, #040a75);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.addbtn:active {
+  transform: scale(0.8);
+}
+.taskContainer {
+  position: relative;
+  border-radius: 30px;
+  padding: 15px 15px 25px 15px;
+  list-style: none;
+}
+ul li{
+    position: relative;
+}
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-image: url(unchecked.png);
+  background-size: cover;
+  background-position: center;
+  left: -20px;
+  top: 17px;
+}
+li.checked{
+    text-decoration: line-through;
+    color: rgba(59, 4, 4, 0.493);
+}
+li.checked::before{
+    content: "";
+  position: absolute;
+  height: 29px;
+  width: 29px;
+  border-radius: 50%;
+  background-image: url(check.png);
+  background-size: cover;
+  background-position: center;
+  left: -32px;
+  top: 10px;
+  transition: all .5s ease;
+}
+.taskContainer li {
+  padding: 15px;
+  margin-left: 25px;
+  color: rgba(255, 255, 255, 0.851);
+  cursor: pointer;
+  margin-top: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 2px transparent;
+  transition: all 0.5s ease-in-out;
+}
+.taskContainer li:hover {
+  background: rgba(250, 235, 215, 0.058);
+  border-radius: 5px;
+}
+
+.taskContainer li span {
+  position: absolute;
+  right: -40px;
+  font-size: 30px;
+  top: 2px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: rgba(250, 235, 215, 0.052);
+  transition: all 0.5s ease;
+}
+.taskContainer li span:hover{
+      background-color: rgba(180, 55, 55, 0.276);
+
+}
